@@ -1,0 +1,23 @@
+{
+	"name": "PinyinSort",
+	"author": "Gary Guo",
+	"url": "https://github.com/nbdd0121/MW-PinyinSort",
+	"descriptionmsg": "pinyinsort_desc",
+	"version": "0.1.0",
+	"license-name": "BSD-2-Clause",
+	"type": "category",
+	"MessagesDirs": {
+		"PinyinSort": [
+			"i18n"
+		]
+	},
+	"Hooks": {
+		"Collation::factory": "PinyinSort\\PinyinCollation::onFactory"
+	},
+	"AutoloadClasses": {
+		"PinyinSort\\PinyinCollation": "includes/PinyinCollation.php",
+		"PinyinSort\\Converter": "includes/Converter.php",
+		"PinyinSort\\ConversionTable": "includes/ConversionTable.php"
+	},
+	"manifest_version": 1
+}
