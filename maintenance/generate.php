@@ -26,6 +26,7 @@ namespace PinyinSort;
 
 class ConversionTable {
 public static \$zh2pinyin = array(
+
 EOT;
 
 foreach ($lines as $line) {

@@ -10,7 +10,8 @@
 namespace PinyinSort;
 
 class ConversionTable {
-public static $zh2pinyin = array('㐀' => 'qiu',
+public static $zh2pinyin = array(
+'㐀' => 'qiu',
 '㐁' => 'tian',
 '㐄' => 'kua',
 '㐅' => 'wu',
