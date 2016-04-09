@@ -12,7 +12,7 @@ class PinyinCollation extends \Collation {
 	}
 
 	public function getSortKey($string) {
-		return Converter::zh2pinyin($string);
+		return ucfirst(Converter::zh2pinyin($string));
 	}
 
 	public function getFirstLetter($string) {
