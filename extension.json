@@ -12,10 +12,12 @@
 		]
 	},
 	"Hooks": {
-		"Collation::factory": "PinyinSort\\PinyinCollation::onFactory"
+		"Collation::factory": "PinyinSort\\Hooks::onFactory"
 	},
 	"AutoloadClasses": {
+		"PinyinSort\\Hooks": "includes/Hooks.php",
 		"PinyinSort\\PinyinCollation": "includes/PinyinCollation.php",
+		"PinyinSort\\PinyinCollationNoPrefix": "includes/PinyinCollationNoPrefix.php",
 		"PinyinSort\\Converter": "includes/Converter.php",
 		"PinyinSort\\ConversionTable": "includes/ConversionTable.php"
 	},
