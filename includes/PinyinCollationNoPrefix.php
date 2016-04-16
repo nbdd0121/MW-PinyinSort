@@ -14,7 +14,7 @@ class PinyinCollationNoPrefix extends \Collation {
 			return $string;
 		} else {
 			$parts = explode(':', $string, 2);
-			if (count($parts) !== 2) {
+			if (!isset($parts[2]) || !$parts[2]) {
 				return $string;
 			} else {
 				return $parts[1] . "\n" . $string;
