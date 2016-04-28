@@ -9,12 +9,12 @@ class PinyinCollationNoPrefix extends \Collation {
 		$this->collation = new PinyinCollation();
 	}
 
-	private function process($string) {
+	private static function process($string) {
 		if (strpos($string, "\n") !== false) {
 			return $string;
 		} else {
 			$parts = explode(':', $string, 2);
-			if (!isset($parts[2]) || !$parts[2]) {
+			if (!isset($parts[1]) || !$parts[1]) {
 				return $string;
 			} else {
 				return $parts[1] . "\n" . $string;
@@ -23,12 +23,12 @@ class PinyinCollationNoPrefix extends \Collation {
 	}
 
 	public function getSortKey($string) {
-		$string = $this->process($string);
+		$string = static::process($string);
 		return $this->collation->getSortKey($string);
 	}
 
 	public function getFirstLetter($string) {
-		$string = $this->process($string);
+		$string = static::process($string);
 		return $this->collation->getFirstLetter($string);
 	}
 }
