@@ -3,33 +3,19 @@ namespace PinyinSort;
 
 class PinyinCollation extends \Collation {
 
-	public static function getRawSortKey($string) {
-		if (strpos($string, "\n") === false) {
-			return $string;
-		} else {
-			$parts = explode("\n", $string, 2);
-			return $parts[0];
-		}
-	}
-
-	public static function getFinalSortKey($string, $processed) {
-		if (strpos($string, "\n") === false) {
-			return $processed . "\n" . $string;
-		} else {
-			$parts = explode("\n", $string, 2);
-			return $processed . "\n" . $parts[1];
-		}
-	}
-
 	public function getSortKey($string) {
-		return static::getFinalSortKey(
-			$string,
-			ucfirst(
-				Converter::zh2pinyin(
-					static::getRawSortKey($string)
-				)
-			)
-		);
+		if (strpos($string, "\n") === false) {
+			$key = $string;
+			$original = $string;
+		} else {
+			$parts = explode("\n", $string, 2);
+			$key = $parts[0];
+			$original = $parts[1];
+		}
+
+		$key = ucfirst(Converter::zh2pinyin($key));
+
+		return $key . "\n" . $original;
 	}
 
 	public function getFirstLetter($string) {
