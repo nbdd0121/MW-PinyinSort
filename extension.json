@@ -16,7 +16,6 @@
 	},
 	"AutoloadClasses": {
 		"PinyinSort\\Hooks": "includes/Hooks.php",
-		"PinyinSort\\Utils": "includes/Utils.php",
 		"PinyinSort\\PinyinCollation": "includes/PinyinCollation.php",
 		"PinyinSort\\PinyinCollationNoPrefix": "includes/PinyinCollationNoPrefix.php",
 		"PinyinSort\\Converter": "includes/Converter.php",
