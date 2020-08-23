@@ -21,6 +21,6 @@ class PinyinCollation extends \Collation {
 	public function getFirstLetter($string) {
 		$firstChar = mb_substr($string, 0, 1, 'UTF-8');
 		$pinyin = Converter::zh2pinyin($firstChar);
-		return ucfirst($pinyin{0});
+		return ucfirst($pinyin[0]);
 	}
 }
