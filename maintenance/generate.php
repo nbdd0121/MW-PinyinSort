@@ -52,7 +52,7 @@ foreach ($lines as $line) {
 	$pinyin = str_replace(array('ū', 'ú', 'ǔ', 'ù'), 'u', $pinyin);
 	$pinyin = str_replace(array('ē', 'é', 'ě', 'è'), 'e', $pinyin);
 	$pinyin = str_replace(array('ō', 'ó', 'ǒ', 'ò'), 'o', $pinyin);
-	$pinyin = str_replace('ü', 'v', $pinyin);
+	$pinyin = str_replace(array('ǖ', 'ǘ', 'ǚ', 'ǜ'), 'v', $pinyin);
 
 	$output .= "'{$char}' => '{$pinyin}',\n";
 }
