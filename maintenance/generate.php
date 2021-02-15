@@ -36,7 +36,7 @@ foreach ($lines as $line) {
 		continue;
 	}
 	// Comment
-	if ($line{0} === '#') {
+	if ($line[0] === '#') {
 		continue;
 	}
 	$comp = explode("\t", $line);
