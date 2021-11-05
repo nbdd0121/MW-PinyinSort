@@ -36,7 +36,7 @@ foreach ($lines as $line) {
 		continue;
 	}
 	// Comment
-	if ($line{0} === '#') {
+	if ($line[0] === '#') {
 		continue;
 	}
 	$comp = explode("\t", $line);
@@ -47,7 +47,7 @@ foreach ($lines as $line) {
 	$code = hexdec(str_replace('U+', '', $comp[0]));
 	$char = uchr($code);
 
-	$pinyin = str_replace(array('ā', 'á', 'ǎ', 'à'), 'a', $comp[2]);
+	$pinyin = str_replace(array('ā', 'á', 'ǎ', 'à'), 'a', explode(' ', $comp[2])[0]);
 	$pinyin = str_replace(array('ī', 'í', 'ǐ', 'ì'), 'i', $pinyin);
 	$pinyin = str_replace(array('ū', 'ú', 'ǔ', 'ù'), 'u', $pinyin);
 	$pinyin = str_replace(array('ē', 'é', 'ě', 'è'), 'e', $pinyin);
